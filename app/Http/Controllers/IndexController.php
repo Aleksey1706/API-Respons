@@ -15,6 +15,9 @@ class IndexController extends Controller
     }
 
  public  function  show(){
-        return view('form');
+        if (view()->exists('form')) {
+            return view('form');
+        }
+        abort(404);
  }
 }
