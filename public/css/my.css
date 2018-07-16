@@ -1,0 +1,46 @@
+.form{
+    text-align: center;
+    position: center;
+}
+form .field input {
+    position: center;
+    text-align: center;
+    width: 600px;
+    height: 59px;
+    border-radius: 20px;
+    border: 2px solid #929292;
+    margin-bottom: 90px;
+    padding-left: 20px;
+    outline: none;
+    color: #333333;
+    font-family: "Lato";
+    font-size: 37px;
+    font-weight: 400;
+    line-height: 50px;
+}
+form button {
+    position: center;
+    width: 314px;
+    height: 64px;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: #ff0000;
+    border: 2px solid #ff0000;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-size: 37px;
+    line-height: 50px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+form button:hover {
+    text-align: center;
+    color: #ff0000;
+    background-color: #ffffff;
+}
+h1{
+text-align: center;
+    font-size:60px;
+
+}
