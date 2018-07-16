@@ -10,7 +10,14 @@ class IndexController extends Controller
 {
     public  function  index(Request $request)
     {
-           RequestUser::get_user($request['login'],$request['password'],'https://api.shipments.test-y-sbm.com/login');
+        $data = array_except($request->post(), ['_token']);
+        $response = RequestUser::get_user($data,'https://api.shipments.test-y-sbm.com/login');
+        $token = isset($response->data) ? $response->data[0]->token : null;
+        if($token!=null){
+            return view('success');
+        }
+        else
+            return view('error');
 
     }
 

@@ -2,12 +2,7 @@
 namespace App\Helpers;
 class RequestUser
 {
-static function get_user($email ,$password ,$url){
-    $users = [
-        'email' => $email,
-        'password' => $password,
-    ];
-
+static function get_user($data ,$url){
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -18,7 +13,7 @@ static function get_user($email ,$password ,$url){
         CURLOPT_TIMEOUT => 30000,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => json_encode($users),
+        CURLOPT_POSTFIELDS => json_encode($data),
         CURLOPT_HTTPHEADER => array(
 
             "accept: */*",
@@ -32,10 +27,6 @@ static function get_user($email ,$password ,$url){
 
     curl_close($curl);
 
-    if ($err) {
-        echo "cURL Error #:" . $err;
-    } else {
-       print_r (json_decode($response));
-    }
+    return json_decode($response);
 }
 }

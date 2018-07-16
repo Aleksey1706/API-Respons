@@ -8,9 +8,10 @@
 <body>
 <h1>Форма входа</h1>
 
-        <form  action="{{route('home')}}" class="email">
+        <form  action="{{route('usertoken')}}" method="POST" class="email">
+            {{ csrf_field() }}
             <div class="field">
-                <input type="text" name="login" placeholder="Enter your e-mail" required>
+                <input type="email" name="email" placeholder="Enter your e-mail" required>
             </div>
                 <div class="field">
                     <input type="password" name="password" placeholder="Password" required>
